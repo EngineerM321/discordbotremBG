@@ -45,7 +45,7 @@ async def on_message(message: discord.Message):
 
           # --- 背景削除実行 ---
           input_img = Image.open(BytesIO(img_bytes))
-          input_small = input.resize((input_img.width // 2, input_img.height // 2))
+          input_small = input_img.resize((input_img.width // 2, input_img.height // 2))
           output_small = remove(input_small, model_name='u2netp')
           output_img = output_small.resize(input_img.size)
         
